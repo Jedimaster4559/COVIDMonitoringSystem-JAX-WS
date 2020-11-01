@@ -1,6 +1,10 @@
 # COVIDMonitoringSystem-JAX-WS
 A COVID Monitoring System for classrooms built with JAX-WS.
 
+# Usage
+This application is entriely Command Line based. This section of this readme goes over basic command necessary to run the project.
+( @Jada When you get to implementing this stuff, you might want to move this section fo the readme into it's own file. It's entirely up to you how to handle that, but we do need to document this part pretty extensively.)
+
 # Development Setup
 Follow the configuration steps below to make sure that you are able to work on the development of this project.
 
