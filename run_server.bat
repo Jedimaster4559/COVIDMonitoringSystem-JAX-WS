@@ -1,0 +1,1 @@
+java -jar COVIDMonitoringServer/target/COVIDMonitoringServer-1.0-SNAPSHOT.jar

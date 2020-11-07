@@ -1,0 +1,1 @@
+java -jar COVIDMonitoringClient/target/COVIDMonitoringClient-1.0-SNAPSHOT.jar Nathan
