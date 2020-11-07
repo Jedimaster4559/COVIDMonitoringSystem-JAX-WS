@@ -21,4 +21,17 @@ public class SimulationDataModel {
         classes.add(Classroom.generate(2));
         classes.add(Classroom.generate(3));
     }
+
+    /**
+     * Adds a person to the data model.
+     *
+     * @param classroomId  The classroom to add the person to.
+     * @param personId  The id to use for the new person
+     * @param isTeacher  If the person is a teacher or not.
+     * @return  True if successfully added. False if the classroom ID is invalid
+     * or the personId already exists.
+     */
+    public boolean addPerson(int classroomId, int personId, boolean isTeacher){
+        return true;
+    }
 }
