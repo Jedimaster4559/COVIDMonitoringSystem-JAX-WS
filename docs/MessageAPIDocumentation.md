@@ -29,13 +29,13 @@ System.out.println(response);
 ```
 
 # Event types
-[Add Person](#add-person)
-[Hello World](#hello-world)
-[Move Person](#move-person)
-[Request Data Update (Request Update)](#request-data-update-request-update)
-[Reset Simulation](#reset-simulation)
-[Update Person State (Update Person)](#update-person-state-update-person)
-[Use Cleaner](#use-cleaner)
+- [Add Person](#add-person)
+- [Hello World](#hello-world)
+- [Move Person](#move-person)
+- [Request Data Update (Request Update)](#request-data-update-request-update)
+- [Reset Simulation](#reset-simulation)
+- [Update Person State (Update Person)](#update-person-state-update-person)
+- [Use Cleaner](#use-cleaner)
 
 ## Add Person
 This event adds a new person to the data model. They are by default added to the entrance tile (Tile 1).
