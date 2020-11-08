@@ -5,6 +5,11 @@ import com.covidmonitoring.data.SimulationDataModelFactory;
 
 import javax.jws.WebService;
 
+/**
+ * Implementation of the add person web service.
+ *
+ * @author Nathan Solomon
+ */
 @WebService(endpointInterface = "com.covidmonitoring.msgs.IAddPerson")
 public class AddPerson implements IAddPerson {
 
