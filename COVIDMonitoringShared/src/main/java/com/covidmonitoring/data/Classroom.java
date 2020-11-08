@@ -49,18 +49,54 @@ public class Classroom {
      */
     public static Classroom generate(int id) {
         Classroom newClass = new Classroom(id);
-        newClass.addTile(new Tile(1, LocationType.ENTRANCE));
+        newClass.addTile(new Cleaner(1, LocationType.ENTRANCE));
         newClass.addTile(new Tile(2, LocationType.AISLE));
-        newClass.addTile(new Tile(3, LocationType.DESK));
+        newClass.addTile(new Cleaner(3, LocationType.DESK));
         newClass.addTile(new Tile(4, LocationType.AISLE));
-        newClass.addTile(new Tile(5, LocationType.DESK));
-        newClass.addTile(new Tile(6, LocationType.DESK));
+        newClass.addTile(new Cleaner(5, LocationType.DESK));
+        newClass.addTile(new Cleaner(6, LocationType.DESK));
         newClass.addTile(new Tile(7, LocationType.AISLE));
-        newClass.addTile(new Tile(8, LocationType.DESK));
+        newClass.addTile(new Cleaner(8, LocationType.DESK));
         newClass.addTile(new Tile(9, LocationType.AISLE));
-        newClass.addTile(new Tile(10, LocationType.DESK));
-        newClass.addTile(new Tile(11, LocationType.DESK));
+        newClass.addTile(new Cleaner(10, LocationType.DESK));
+        newClass.addTile(new Cleaner(11, LocationType.DESK));
         newClass.addTile(new Tile(12, LocationType.AISLE));
         return newClass;
+    }
+
+    /**
+     * Gets the tile with the given ID
+     * @param tileId The ID of the tile to get
+     * @return The Tile Object itself
+     */
+    public Tile getTileById(int tileId){
+        Tile found = null;
+
+        for(Tile tile : tiles) {
+            if(tile.getId() == tileId){
+                found = tile;
+                break;
+            }
+        }
+
+        return found;
+    }
+
+    /**
+     * Gets the person with the given ID
+     * @param personId the ID of the person to get
+     * @return The Person Object itself
+     */
+    public Person getPersonById(int personId){
+        Person found = null;
+
+        for(Person person : occupants) {
+            if(person.getId() == personId){
+                found = person;
+                break;
+            }
+        }
+
+        return found;
     }
 }

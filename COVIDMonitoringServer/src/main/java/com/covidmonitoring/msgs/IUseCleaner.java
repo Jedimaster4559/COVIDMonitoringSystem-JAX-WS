@@ -14,5 +14,12 @@ import javax.jws.soap.SOAPBinding;
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface IUseCleaner {
+
+    /**
+     * Uses the cleaner from at a persons current location.
+     *
+     * @param personId The ID of the person to clean
+     * @return the current state of the data model
+     */
     @WebMethod SimulationDataModel useCleaner(int personId);
 }

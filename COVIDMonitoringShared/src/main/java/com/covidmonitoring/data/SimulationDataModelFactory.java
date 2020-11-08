@@ -34,4 +34,14 @@ public class SimulationDataModelFactory {
 
         return instance;
     }
+
+    /**
+     * Resets the data model to a new empty data model
+     *
+     * @return the new data model.
+     */
+    public static SimulationDataModel reset(){
+        instance = new SimulationDataModel();
+        return instance;
+    }
 }

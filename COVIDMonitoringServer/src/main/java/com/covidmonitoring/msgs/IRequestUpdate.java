@@ -14,5 +14,11 @@ import javax.jws.soap.SOAPBinding;
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface IRequestUpdate {
+
+    /**
+     * Gets the latest version of the data model.
+     *
+     * @return The current state of the data model
+     */
     @WebMethod SimulationDataModel requestUpdate();
 }
