@@ -37,7 +37,7 @@ public class Output {
      * Prints out the commands a user can use
      */
     static void printCommands() {
-        System.out.println("--------------------Commands--------------------");
+        System.out.println("------------------------------Commands------------------------------");
         System.out.println("Start Classes: start");
         System.out.println("End Classes: end");
         System.out.println("Switch room: switch [classroom number]");
