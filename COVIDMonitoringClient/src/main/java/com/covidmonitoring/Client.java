@@ -16,16 +16,9 @@ import com.covidmonitoring.data.SimulationDataModel;
 import com.covidmonitoring.msgs.IAddPerson;
 import com.covidmonitoring.msgs.IHelloWorld;
 import com.covidmonitoring.ws.EndpointProperties;
+import com.covidmonitoring.PrintCommands;
 
 public class Client {
-    static void printCommands() {
-        System.out.println("--------------------Commands--------------------");
-        System.out.println("Start Classes: start");
-        System.out.println("End Classes: end");
-        System.out.println("Switch room: switch [classroom number]");
-        System.out.println("Please enter a command: ");
-    }
-
     public static void main(String[] args) throws MalformedURLException {
         // Configure Hello World
         URL helloWorldWsdlLocation = new URL(EndpointProperties.helloWorldWsdlLocation);
@@ -48,7 +41,7 @@ public class Client {
         System.out.println("Welcome to the COVID-19 Monitoring Simulation: JAX-WS Version!\n");
 
         while (simulationRunning == true) {
-            printCommands();
+            PrintCommands.printCommands();
 
         }
     }

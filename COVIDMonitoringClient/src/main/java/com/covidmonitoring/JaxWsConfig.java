@@ -1,5 +1,5 @@
 /**
- * Basic service implementation using JAX-WS
+ * JAX-WS configuration statements
  *
  * @author jblankenship
  */
