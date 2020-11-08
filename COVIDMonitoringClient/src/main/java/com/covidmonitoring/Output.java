@@ -29,7 +29,13 @@ Sample Classroom Layout:
 |---------------------------------------------------------------------------------------------------------------------------------|
 */
 
-public class PrintCommands {
+/**
+ * Prints out different information for the user
+ */
+public class Output {
+    /**
+     * Prints out the commands a user can use
+     */
     static void printCommands() {
         System.out.println("--------------------Commands--------------------");
         System.out.println("Start Classes: start");
@@ -38,6 +44,29 @@ public class PrintCommands {
         System.out.println("Please enter a command: ");
     }
 
+    /**
+     * Prints out the classroom and its contents
+     * @param classnum The classroom number
+     * @param tile1Sanitizer 'y' if the sanitizer has been used; 'n' if not
+     * @param tile1people Number of people in tile 1
+     * @param tile2people Number of people in tile 2
+     * @param tile3lysol Number of times tile 3's lysol has been used
+     * @param tile3people Number of people in tile 3
+     * @param tile4people Number of people in tile 4
+     * @param tile5lysol Number of times tile 5's lysol has been used
+     * @param tile5people Number of people in tile 5
+     * @param tile6lysol Number of times tile 6's lysol has been used
+     * @param tile6people Number of people in tile 6
+     * @param tile7people Number of people in tile 7
+     * @param tile8lysol Number of times tile 8's lysol has been used
+     * @param tile8people Number of people in tile 8
+     * @param tile9people Number of people in tile 9
+     * @param tile10lysol Number of times tile 10's lysol has been used
+     * @param tile10people Number of people in tile 10
+     * @param tile11lysol Number of times tile 11's lysol has been usd
+     * @param tile11people Number of people in tile 11
+     * @param tile12people Number of people in tile 12
+     */
     static void printRoom(int classnum, char tile1Sanitizer, int tile1people, int tile2people, int tile3lysol,
                           int tile3people, int tile4people, int tile5lysol, int tile5people, int tile6lysol,
                           int tile6people, int tile7people, int tile8lysol, int tile8people, int tile9people,
@@ -62,5 +91,22 @@ public class PrintCommands {
         System.out.println("|TileID: 12                                                                                                                       |");
         System.out.println("|People:" + tile12people + "                                                                                                                         |");
         System.out.println("|---------------------------------------------------------------------------------------------------------------------------------|");
+    }
+
+    /**
+     * Prints out a person and their information
+     * @param personID The person's ID number
+     * @param personType Whether the person is a "student" or a "teacher"
+     * @param mask 'y' if the person is wearing a mask; 'n' if the person isn't wearing a mask
+     * @param faceshield 'y' if the teacher is wearing a face shield; 'n' if the teacher isn't; 'a' if the person is a student
+     */
+    static void printPerson(int personID, String personType, char mask, char faceshield) {
+        System.out.println("--------------------");
+        System.out.println("PersonID: " + personID);
+        System.out.println("Type: " + personType);
+        System.out.println("Wearing a mask: " + mask);
+        if (faceshield == 'y' || faceshield == 'n') {
+            System.out.println("Wearing a face shield: " + faceshield);
+        }
     }
 }

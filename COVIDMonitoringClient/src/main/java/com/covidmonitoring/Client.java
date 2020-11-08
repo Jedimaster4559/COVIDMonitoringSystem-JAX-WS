@@ -16,7 +16,7 @@ import com.covidmonitoring.data.SimulationDataModel;
 import com.covidmonitoring.msgs.IAddPerson;
 import com.covidmonitoring.msgs.IHelloWorld;
 import com.covidmonitoring.ws.EndpointProperties;
-import com.covidmonitoring.PrintCommands;
+import com.covidmonitoring.Output;
 
 public class Client {
     public static void main(String[] args) throws MalformedURLException {
@@ -41,17 +41,18 @@ public class Client {
         System.out.println("Welcome to the COVID-19 Monitoring Simulation: JAX-WS Version!\n");
 
         while (simulationRunning == true) {
-            PrintCommands.printCommands();
-            /*int classnum, char tile1Sanitizer, int tile1people, int tile2people, int tile3lysol,
-            int tile3people, int tile4people, int tile5lysol, int tile5people, int tile6lysol,
-            int tile6people, int tile7people, int tile8lysol, int tile8people, int tile9people,
-            int tile10lysol, int tile10people, int tile11lysol, int tile11people, int tile12people
-            */
-            PrintCommands.printRoom(1, 'y', 0, 0, 0, 0,
+            Output.printCommands();
+
+            /*Output.printRoom(1, 'y', 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0);
 
             simulationRunning = false;
+             */
+
+            Output.printPerson(1, "student", 'y', 'n');
+            simulationRunning = false;
+
         }
     }
 
