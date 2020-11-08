@@ -31,7 +31,7 @@
             <artifactId>javax.jws-api</artifactId>
             <version>1.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.xml.ws/jaxws-api -->
+        <!-- https://mvnrepository.com/artifact/javax.xml.com.covidmonitoring.ws/jaxws-api -->
         <dependency>
             <groupId>javax.xml.ws</groupId>
             <artifactId>jaxws-api</artifactId>
