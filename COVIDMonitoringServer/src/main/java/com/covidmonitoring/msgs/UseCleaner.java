@@ -1,6 +1,7 @@
 package com.covidmonitoring.msgs;
 
 import com.covidmonitoring.data.SimulationDataModel;
+import com.covidmonitoring.data.SimulationDataModelFactory;
 
 import javax.jws.WebService;
 
@@ -11,9 +12,17 @@ import javax.jws.WebService;
  */
 @WebService(endpointInterface = "com.covidmonitoring.msgs.IUseCleaner")
 public class UseCleaner implements IUseCleaner {
+
+    /**
+     * Uses the cleaner from at a persons current location.
+     *
+     * @param personId The ID of the person to clean
+     * @return the current state of the data model
+     */
     @Override
     public SimulationDataModel useCleaner(int personId) {
-        // TODO: implementation
-        return null;
+        SimulationDataModel model = SimulationDataModelFactory.getModel();
+        model.useCleaner(personId);
+        return model;
     }
 }

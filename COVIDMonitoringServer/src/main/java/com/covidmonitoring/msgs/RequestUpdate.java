@@ -1,6 +1,7 @@
 package com.covidmonitoring.msgs;
 
 import com.covidmonitoring.data.SimulationDataModel;
+import com.covidmonitoring.data.SimulationDataModelFactory;
 
 import javax.jws.WebService;
 
@@ -12,9 +13,13 @@ import javax.jws.WebService;
 @WebService(endpointInterface = "com.covidmonitoring.msgs.IRequestUpdate")
 public class RequestUpdate implements IRequestUpdate {
 
+    /**
+     * Gets the latest version of the data model.
+     *
+     * @return The current state of the data model
+     */
     @Override
     public SimulationDataModel requestUpdate() {
-        // TODO: Implementation
-        return null;
+        return SimulationDataModelFactory.getModel();
     }
 }

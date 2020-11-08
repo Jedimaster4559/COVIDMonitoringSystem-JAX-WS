@@ -14,5 +14,12 @@ import javax.jws.soap.SOAPBinding.Style;
 @WebService
 @SOAPBinding(style = Style.RPC)
 public interface IHelloWorld {
+
+    /**
+     * Basic hello world method.
+     *
+     * @param name The name to use for the hello world.
+     * @return An output Hello World message
+     */
     @WebMethod String helloWorld(String name);
 }
