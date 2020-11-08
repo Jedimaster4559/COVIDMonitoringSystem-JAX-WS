@@ -13,6 +13,13 @@ import javax.jws.WebService;
 @WebService(endpointInterface = "com.covidmonitoring.msgs.IAddPerson")
 public class AddPerson implements IAddPerson {
 
+    /**
+     * Adds a new person to the data model
+     * @param classroomId The classroom to add the person to
+     * @param personId The id of the person to add.
+     * @param isTeacher If the person should be a teacher or not.
+     * @return The state of the data model
+     */
     @Override
     public SimulationDataModel addPerson(int classroomId, int personId, boolean isTeacher){
         SimulationDataModel model = SimulationDataModelFactory.getModel();

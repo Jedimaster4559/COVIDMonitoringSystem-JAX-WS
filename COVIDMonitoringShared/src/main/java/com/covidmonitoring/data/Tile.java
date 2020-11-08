@@ -50,4 +50,12 @@ public class Tile {
         numPeople--;
         checkPeople();
     }
+
+    /**
+     * Gets the ID of this tile.
+     * @return The ID of this tile.
+     */
+    public int getId(){
+        return id;
+    }
 }

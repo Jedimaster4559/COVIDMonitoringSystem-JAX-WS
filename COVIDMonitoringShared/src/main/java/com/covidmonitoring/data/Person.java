@@ -20,6 +20,7 @@ public class Person {
         this.id = id;
         this.location = location;
         this.maskErrorAlarm = false;
+        location.addPerson();
     }
 
     /**
@@ -34,5 +35,27 @@ public class Person {
      */
     public void wearMaskCorrectly() {
         this.maskErrorAlarm = false;
+    }
+
+    /**
+     * Gets the ID of this person
+     * @return The ID of this person
+     */
+    public int getId(){
+        return id;
+    }
+
+    /**
+     * Gets the tile this person is on
+     * @return The Tile object this person is on.
+     */
+    public Tile getTile() {
+        return location;
+    }
+
+    public void moveTile(Tile destination) {
+        location.leave();
+        destination.addPerson();
+        location = destination;
     }
 }

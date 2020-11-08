@@ -14,6 +14,13 @@ import javax.jws.soap.SOAPBinding;
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface IResetSimulation {
+
+    /**
+     * Resets the datamodel being used by the server back to it's
+     * initial state.
+     *
+     * @return The new data model.
+     */
     @WebMethod SimulationDataModel resetSimulation();
 
 }
