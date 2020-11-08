@@ -41,6 +41,12 @@ public class Output {
         System.out.println("Start Classes: start");
         System.out.println("End Classes: end");
         System.out.println("Switch room: switch [classroom number]");
+        System.out.println("Add a person: add [person ID] ['teacher' || 'student']");
+        System.out.println("Move a person: move [person ID] [tile ID]");
+        System.out.println("Use lysol: lysol [person ID]");
+        System.out.println("Use sanitizer: sanitizer [person ID]");
+        System.out.println("Update mask usage: mask ['on' || 'off'] [person ID]");
+        System.out.println("Update face shield usage: shield ['on' || 'off'] [person ID]");
         System.out.println("Please enter a command: ");
     }
 
