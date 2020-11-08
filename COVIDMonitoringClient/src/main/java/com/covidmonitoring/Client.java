@@ -42,7 +42,16 @@ public class Client {
 
         while (simulationRunning == true) {
             PrintCommands.printCommands();
+            /*int classnum, char tile1Sanitizer, int tile1people, int tile2people, int tile3lysol,
+            int tile3people, int tile4people, int tile5lysol, int tile5people, int tile6lysol,
+            int tile6people, int tile7people, int tile8lysol, int tile8people, int tile9people,
+            int tile10lysol, int tile10people, int tile11lysol, int tile11people, int tile12people
+            */
+            PrintCommands.printRoom(1, 'y', 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0);
 
+            simulationRunning = false;
         }
     }
 
