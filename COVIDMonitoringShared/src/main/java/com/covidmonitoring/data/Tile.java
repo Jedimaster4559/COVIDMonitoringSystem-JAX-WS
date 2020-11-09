@@ -58,4 +58,12 @@ public class Tile {
     public int getId(){
         return id;
     }
+
+    /**
+     * Gets the number of people in this tile
+     * @return The number of people in this tile
+     */
+    public int getNumPeople() {
+        return numPeople;
+    }
 }

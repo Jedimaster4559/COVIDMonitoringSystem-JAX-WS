@@ -68,4 +68,12 @@ public class Cleaner extends Tile {
 
         checkPeople();
     }
+
+    /**
+     * Gets the number of times the lysol has been used
+     * @return The number of times the lysol has been used
+     */
+    public int getCleanCount() {
+        return cleanCount;
+    }
 }
