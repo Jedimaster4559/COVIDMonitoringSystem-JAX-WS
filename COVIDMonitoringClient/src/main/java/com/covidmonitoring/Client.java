@@ -6,6 +6,7 @@
 package com.covidmonitoring;
 
 import com.covidmonitoring.data.*;
+import com.covidmonitoring.msgs.IUseCleaner;
 import com.sun.javaws.IconUtil;
 
 import java.net.MalformedURLException;
@@ -33,46 +34,54 @@ public class Client {
                         config.getResetSimulationPort().resetSimulation();
                         System.out.println("Classes have started!");
                     }
+
                     else if (userInput == "end") {
                         config.getResetSimulationPort().resetSimulation();
                         System.out.println("Your classrooms will be reset!");
                     }
+
                     else if (userInput == "quit"){
                         simulationRunning = false;
                     }
+
                     else {
                         System.out.println("You didn't enter a valid command. Please try again.");
                     }
+
                     break;
+
                 case 2:
                     if (inputArray[0] == "switch") {
                         SimulationDataModel model = config.getRequestUpdatePort().requestUpdate();
+
                         if (inputArray[1] == "1") {
                             currentClass = model.getClassroombyId(1);
                         }
+
                         else if (inputArray[1] == "2") {
                             currentClass = model.getClassroombyId(2);
                         }
+
                         else if (inputArray[1] == "3") {
                             currentClass = model.getClassroombyId(3);
                         }
+
                         else {
                             System.out.println("You didn't enter a valid command. Please try again.");
                         }
                     }
 
-                    else if (inputArray[0] == "lysol") {
-
-                    }
-
-                    else if (inputArray[0] == "shield") {
-
+                    else if (inputArray[0] == "lysol" || inputArray[0] == "sanitizer") {
+                        int personId = Integer.parseInt(inputArray[1]);
+                        config.getUseCleanerPort().useCleaner(personId);
                     }
 
                     else {
                         System.out.println("You didn't enter a valid command. Please try again.");
                     }
+
                     break;
+
                 case 3:
                     if (inputArray[0] == "add") {
 
@@ -93,7 +102,9 @@ public class Client {
                     else {
                         System.out.println("You didn't enter a valid command. Please try again.");
                     }
+
                     break;
+
                 default:
                     System.out.println("You didn't enter a valid correctly. Please try again.");
             }
