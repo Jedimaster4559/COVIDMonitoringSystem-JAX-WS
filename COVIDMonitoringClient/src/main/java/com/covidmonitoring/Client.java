@@ -57,15 +57,12 @@ public class Client {
                         if (inputArray[1] == "1") {
                             currentClass = model.getClassroombyId(1);
                         }
-
                         else if (inputArray[1] == "2") {
                             currentClass = model.getClassroombyId(2);
                         }
-
                         else if (inputArray[1] == "3") {
                             currentClass = model.getClassroombyId(3);
                         }
-
                         else {
                             System.out.println("You didn't enter a valid command. Please try again.");
                         }
@@ -84,23 +81,91 @@ public class Client {
 
                 case 3:
                     if (inputArray[0] == "add") {
-
-                    }
-
-                    else if (inputArray[0] == "move") {
-
+                        int classroomId = currentClass.getId();
+                        int personId = Integer.parseInt(inputArray[1]);
+                        boolean isTeacher;
+                        if (inputArray[2] == "teacher") {
+                            isTeacher = true;
+                        }
+                        else {
+                            isTeacher = false;
+                        }
+                        config.getAddPersonPort().addPerson(classroomId, personId, isTeacher);
                     }
 
                     else if (inputArray[0] == "mask") {
-
+                        int personId = Integer.parseInt(inputArray[2]);
+                        boolean shield;
+                        Person person = currentClass.getPersonById(personId);
+                        if (person.getPersonStatus() == "Student") {
+                            shield = false;
+                        }
+                        else {
+                            Instructor instructor = (Instructor) currentClass.getPersonById(personId);
+                            char shieldChar = instructor.getIsShieldWearing();
+                            if (shieldChar == 'y') {
+                                shield = true;
+                            }
+                            else {
+                                shield = false;
+                            }
+                        }
+                        if (inputArray[1] == "on") {
+                            config.getUpdatePersonPort().updatePerson(personId, true, shield);
+                        }
+                        else if (inputArray[1] == "off") {
+                            config.getUpdatePersonPort().updatePerson(personId, false, shield);
+                        }
+                        else {
+                            System.out.println("You didn't enter a valid command. Please try again.");
+                            break;
+                        }
                     }
 
                     else if (inputArray[0] == "shield") {
-
+                        int personId = Integer.parseInt(inputArray[2]);
+                        Person person = currentClass.getPersonById(personId);
+                        boolean mask;
+                        if (person.getIsMaskWearing() == 'y') {
+                            mask = true;
+                        }
+                        else {
+                            mask = false;
+                        }
+                        if (inputArray[1] == "on") {
+                            config.getUpdatePersonPort().updatePerson(personId, mask, true);
+                        }
+                        else if (inputArray[1] == "off") {
+                            config.getUpdatePersonPort().updatePerson(personId, mask, false);
+                        }
+                        else {
+                            System.out.println("You didn't enter a valid command. Please try again.");
+                            break;
+                        }
                     }
 
                     else {
                         System.out.println("You didn't enter a valid command. Please try again.");
+                    }
+
+                    break;
+
+                case 4:
+                    if (inputArray[0] == "move") {
+                        int personId = Integer.parseInt(inputArray[1]);
+                        int tileId = Integer.parseInt(inputArray[2]);
+                        boolean wipe;
+                        if (inputArray[3] == "y") {
+                            wipe = true;
+                        }
+                        else if (inputArray[3] == "n") {
+                            wipe = false;
+                        }
+                        else {
+                            System.out.println("You didn't enter a valid command. Please try again.");
+                            break;
+                        }
+                        config.getMovePersonPort().movePerson(personId, tileId, wipe);
                     }
 
                     break;
