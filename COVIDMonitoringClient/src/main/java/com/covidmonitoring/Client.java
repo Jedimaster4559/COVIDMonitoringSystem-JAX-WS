@@ -5,12 +5,11 @@
  */
 package com.covidmonitoring;
 
-import com.covidmonitoring.msgs.*;
+import com.covidmonitoring.data.SimulationDataModel;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.Scanner;
-
-
 
 public class Client {
     public static void main(String[] args) throws MalformedURLException {
@@ -20,12 +19,13 @@ public class Client {
         boolean simulationRunning = true;
         System.out.println("Welcome to the COVID-19 Monitoring Simulation: JAX-WS Version!\n");
 
-        while (simulationRunning == true) {
+        while (simulationRunning) {
             Output.printCommands();
             Scanner getInput = new Scanner(System.in);
             String userInput = getInput.nextLine();
             String[] inputArray = userInput.split(" ");
             int inputSize = inputArray.length;
+            int currentClass = 0;
 
             switch (inputSize) {
                 case 1:
@@ -47,7 +47,10 @@ public class Client {
                     break;
                 case 2:
                     if (inputArray[0] == "switch") {
-
+                        SimulationDataModel model = config.getRequestUpdatePort().requestUpdate();
+                        if (inputArray[1] == "1") {
+                            //SimulationDataModel printModel = model[0];
+                        }
                     }
 
                     else if (inputArray[0] == "lysol") {
@@ -87,21 +90,6 @@ public class Client {
                     System.out.println("You didn't enter a valid correctly. Please try again.");
             }
 
-//            System.out.println("Switch room: switch [classroom number]");
-              // 2
-//            System.out.println("Add a person: add [person ID] ['teacher' || 'student']");
-              // 3
-//            System.out.println("Move a person: move [person ID] [tile ID]");
-              // 3
-//            System.out.println("Use lysol: lysol [person ID]");
-              // 2
-//            System.out.println("Use sanitizer: sanitizer [person ID]");
-              // 2
-//            System.out.println("Update mask usage: mask ['on' || 'off'] [person ID]");
-              // 3
-//            System.out.println("Update face shield usage: shield ['on' || 'off'] [person ID]");
-              // 3
-
             /*Output.printRoom(1, 'y', 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0);
@@ -110,8 +98,6 @@ public class Client {
 
             Output.printPerson(1, "student", 'y', 'n');
              */
-
-            //simulationRunning = false;
 
         }
 
