@@ -40,6 +40,7 @@ public class Output {
         System.out.println("------------------------------Commands------------------------------");
         System.out.println("Start Classes: start");
         System.out.println("End Classes: end");
+        System.out.println("Quit Simulation: quit");
         System.out.println("Switch room: switch [classroom number]");
         System.out.println("Add a person: add [person ID] ['teacher' || 'student']");
         System.out.println("Move a person: move [person ID] [tile ID]");
