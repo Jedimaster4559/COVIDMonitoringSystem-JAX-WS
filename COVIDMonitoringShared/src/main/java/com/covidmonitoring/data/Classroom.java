@@ -100,6 +100,10 @@ public class Classroom {
         return found;
     }
 
+    /**
+     * Gets the classroom ID
+     * @return The classroom's ID
+     */
     public int getId() {
         return id;
     }

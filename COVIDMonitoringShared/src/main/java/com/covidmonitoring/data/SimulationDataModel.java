@@ -159,6 +159,11 @@ public class SimulationDataModel {
         return found;
     }
 
+    /**
+     * Gets the classroom by the classroom ID
+     * @param id The ID of the classroom to find
+     * @return The classroom object that the person is in. Null if the classroom does not exist
+     */
     public Classroom getClassroombyId(int id) {
         Classroom found = null;
 
@@ -168,6 +173,8 @@ public class SimulationDataModel {
                 break;
             }
         }
+
         return found;
+
     }
 }
