@@ -8,7 +8,6 @@ package com.covidmonitoring;
 import com.covidmonitoring.data.SimulationDataModel;
 
 import java.net.MalformedURLException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Client {
@@ -32,15 +31,12 @@ public class Client {
                     if (userInput == "start") {
                         config.getResetSimulationPort().resetSimulation();
                     }
-
                     else if (userInput == "end") {
                         config.getResetSimulationPort().resetSimulation();
                     }
-
                     else if (userInput == "quit"){
                         simulationRunning = false;
                     }
-
                     else {
                         System.out.println("You didn't enter a valid command. Please try again.");
                     }
@@ -49,7 +45,19 @@ public class Client {
                     if (inputArray[0] == "switch") {
                         SimulationDataModel model = config.getRequestUpdatePort().requestUpdate();
                         if (inputArray[1] == "1") {
-                            //SimulationDataModel printModel = model[0];
+                            model.getClassroombyId(1);
+                            currentClass = 1;
+                        }
+                        else if (inputArray[1] == "2") {
+                            model.getClassroombyId(2);
+                            currentClass = 2;
+                        }
+                        else if (inputArray[1] == "3") {
+                            model.getClassroombyId(3);
+                            currentClass = 3;
+                        }
+                        else {
+                            System.out.println("You didn't enter a valid command. Please try again.");
                         }
                     }
 
@@ -100,7 +108,6 @@ public class Client {
              */
 
         }
-
         System.out.println("See you next time!");
     }
 }

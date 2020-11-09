@@ -99,4 +99,8 @@ public class Classroom {
 
         return found;
     }
+
+    public int getId() {
+        return id;
+    }
 }

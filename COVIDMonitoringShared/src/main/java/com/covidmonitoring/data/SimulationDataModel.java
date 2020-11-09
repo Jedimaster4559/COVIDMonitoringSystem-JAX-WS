@@ -152,9 +152,22 @@ public class SimulationDataModel {
         for(Classroom c : classes) {
             if(c.getPersonById(personId) != null) {
                 found = c;
+                break;
             }
         }
 
+        return found;
+    }
+
+    public Classroom getClassroombyId(int id) {
+        Classroom found = null;
+
+        for(Classroom c : classes) {
+            if(c.getId() == id) {
+                found = c;
+                break;
+            }
+        }
         return found;
     }
 }
