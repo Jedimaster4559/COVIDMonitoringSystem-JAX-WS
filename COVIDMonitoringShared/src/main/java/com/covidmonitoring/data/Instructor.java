@@ -15,8 +15,8 @@ public class Instructor extends Person {
      * @param id The ID of this person
      * @param location The location tile of this person.
      */
-    public Instructor(int id, Tile location) {
-        super(id, location);
+    public Instructor(int id, Tile location, boolean isTeacher) {
+        super(id, location, isTeacher);
         shieldErrorAlarm = false;
     }
 
@@ -32,5 +32,18 @@ public class Instructor extends Person {
      */
     public void wearShieldCorrectly() {
         this.shieldErrorAlarm = false;
+    }
+
+    /**
+     * Gets the person's shield status
+     * @return 'y' if the person is wearing their shield correctly or 'n' if the person is wearing their shield incorrectly
+     */
+    public char getIsShieldWearing() {
+        if (shieldErrorAlarm == false) {
+            return 'y';
+        }
+        else {
+            return 'n';
+        }
     }
 }

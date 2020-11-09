@@ -9,6 +9,7 @@ package com.covidmonitoring.data;
 public class Person {
     private Tile location;
     private int id;
+    private boolean isTeacher;
     private boolean maskErrorAlarm;
 
     /**
@@ -16,9 +17,10 @@ public class Person {
      * @param id The unique ID of the person.
      * @param location The location tile of the person.
      */
-    public Person(int id, Tile location){
+    public Person(int id, Tile location, boolean isTeacher){
         this.id = id;
         this.location = location;
+        this.isTeacher = isTeacher;
         this.maskErrorAlarm = false;
         location.addPerson();
     }
@@ -53,9 +55,39 @@ public class Person {
         return location;
     }
 
+    /**
+     * Moves the person to a new tile
+     * @param destination The tile ID of the tile you want to move to
+     */
     public void moveTile(Tile destination) {
         location.leave();
         destination.addPerson();
         location = destination;
+    }
+
+    /**
+     * Gets the type of this person (Teacher or Student)
+     * @return "Teacher" if the person is a teacher or "Student" if the person is a student
+     */
+    public String getPersonStatus() {
+        if (isTeacher == false) {
+            return "Student";
+        }
+        else {
+            return "Teacher";
+        }
+    }
+
+    /**
+     * Gets the person's mask status
+     * @return 'y' if the person is wearing their mask or 'n' if the person is not wearing their mask
+     */
+    public char getIsMaskWearing() {
+        if (maskErrorAlarm == false) {
+            return 'y';
+        }
+        else {
+            return 'n';
+        }
     }
 }

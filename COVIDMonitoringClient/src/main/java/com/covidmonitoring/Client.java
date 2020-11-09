@@ -5,10 +5,7 @@
  */
 package com.covidmonitoring;
 
-import com.covidmonitoring.data.Classroom;
-import com.covidmonitoring.data.Cleaner;
-import com.covidmonitoring.data.SimulationDataModel;
-import com.covidmonitoring.data.Tile;
+import com.covidmonitoring.data.*;
 import com.sun.javaws.IconUtil;
 
 import java.net.MalformedURLException;
@@ -146,8 +143,20 @@ public class Client {
                         tile4people, tile5lysol, tile5people, tile6lysol, tile6people, tile7people, tile8lysol,
                         tile8people, tile9people, tile10lysol, tile10people, tile11lysol, tile11people, tile12people);
 
-                // Print out all the people in a classroom
-                Output.printPerson(1, "student", 'y', 'n');
+                int[] people = currentClass.getOccupantIds();
+                for(int i = 0; i < people.length; i++) {
+                    int personId = people[i];
+                    Person person = currentClass.getPersonById(personId);
+                    String personType = person.getPersonStatus();
+                    char mask = person.getIsMaskWearing();
+                    char shield = 'a';
+                    if (personType == "Teacher") {
+                        Instructor instructor = (Instructor) currentClass.getPersonById(personId);
+                        shield = instructor.getIsShieldWearing();
+                    }
+
+                    Output.printPerson(personId, personType, mask, shield);
+                }
             }
         }
         System.out.println("See you next time!");

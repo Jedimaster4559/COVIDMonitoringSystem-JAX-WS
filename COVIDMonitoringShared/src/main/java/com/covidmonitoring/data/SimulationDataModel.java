@@ -36,7 +36,11 @@ public class SimulationDataModel {
         }
 
         Tile entranceTile = classes.get(classroomId - 1).getTileById(1);
-        classes.get(classroomId - 1).addPerson(new Person(personId, entranceTile));
+        if(isTeacher) {
+            classes.get(classroomId - 1).addPerson(new Instructor(personId, entranceTile, isTeacher));
+        } else {
+            classes.get(classroomId - 1).addPerson(new Person(personId, entranceTile, isTeacher));
+        }
         return true;
     }
 

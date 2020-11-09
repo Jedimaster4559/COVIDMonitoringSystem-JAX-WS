@@ -102,18 +102,18 @@ public class Output {
 
     /**
      * Prints out a person and their information
-     * @param personID The person's ID number
+     * @param personId The person's ID number
      * @param personType Whether the person is a "student" or a "teacher"
      * @param mask 'y' if the person is wearing a mask; 'n' if the person isn't wearing a mask
-     * @param faceshield 'y' if the teacher is wearing a face shield; 'n' if the teacher isn't; 'a' if the person is a student
+     * @param shield 'y' if the teacher is wearing a face shield; 'n' if the teacher isn't; 'a' if the person is a student
      */
-    static void printPerson(int personID, String personType, char mask, char faceshield) {
+    static void printPerson(int personId, String personType, char mask, char shield) {
         System.out.println("--------------------");
-        System.out.println("PersonID: " + personID);
+        System.out.println("Person ID: " + personId);
         System.out.println("Type: " + personType);
         System.out.println("Wearing a mask: " + mask);
-        if (faceshield == 'y' || faceshield == 'n') {
-            System.out.println("Wearing a face shield: " + faceshield);
+        if (shield == 'y' || shield == 'n') {
+            System.out.println("Wearing a face shield: " + shield);
         }
     }
 }
