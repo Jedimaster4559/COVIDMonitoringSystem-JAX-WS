@@ -43,7 +43,7 @@ public class Output {
         System.out.println("Quit Simulation: quit");
         System.out.println("Switch room: switch [classroom number]");
         System.out.println("Add a person: add [person ID] ['teacher' || 'student']");
-        System.out.println("Move a person: move [person ID] [tile ID] ['y' to wipe || 'n' to not wipe]");
+        System.out.println("Move a person: move [person ID] [tile ID] ['y' to wipe || 'n' to not wipe || 'n' if N/A]");
         System.out.println("Use lysol: lysol [person ID]");
         System.out.println("Use sanitizer: sanitizer [person ID]");
         System.out.println("Update mask usage: mask ['on' || 'off'] [person ID]");
@@ -108,10 +108,11 @@ public class Output {
      * @param mask 'y' if the person is wearing a mask; 'n' if the person isn't wearing a mask
      * @param shield 'y' if the teacher is wearing a face shield; 'n' if the teacher isn't; 'a' if the person is a student
      */
-    static void printPerson(int personId, String personType, char mask, char shield) {
-        System.out.println("------------------------------");
+    static void printPerson(int personId, String personType, int tileID, char mask, char shield) {
+        System.out.println("------------------------------People------------------------------");
         System.out.println("Person ID: " + personId);
         System.out.println("Type: " + personType);
+        System.out.println("Tile ID: " + tileID);
         System.out.println("Wearing a mask: " + mask);
         if (shield == 'y' || shield == 'n') {
             System.out.println("Wearing a face shield: " + shield);

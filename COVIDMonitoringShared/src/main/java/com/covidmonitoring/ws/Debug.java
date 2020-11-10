@@ -1,7 +1,7 @@
 package com.covidmonitoring.ws;
 
 public class Debug {
-    private static boolean enableFlag = false;
+    private static boolean enableFlag = true;
 
     static {
         enableAll(enableFlag);

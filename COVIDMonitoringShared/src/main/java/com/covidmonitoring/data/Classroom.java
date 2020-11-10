@@ -132,10 +132,13 @@ public class Classroom {
      * @return The array with the list of people's IDs who are in the classroom
      */
     public int[] getOccupantIds() {
-        int peopleInTile[] = new int[occupants.size()];
+        int peopleInTile[] = null;
         int count = 0;
-        for(Person person : occupants) {
-            peopleInTile[count] = (person.getId());
+        if (occupants != null) {
+            peopleInTile = new int[occupants.size()];
+            for(Person person : occupants) {
+                peopleInTile[count] = (person.getId());
+            }
         }
 
         return peopleInTile;

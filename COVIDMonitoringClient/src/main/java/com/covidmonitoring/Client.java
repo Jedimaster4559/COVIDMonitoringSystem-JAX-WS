@@ -13,7 +13,11 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws MalformedURLException {
-//        Debug.enableAll(true);
+        Debug.enableAll(true);
+        System.setProperty("com.sun.xml.ws.transport.http.client.HttpTransportPipe.dump", Boolean.toString(true));
+        System.setProperty("com.sun.xml.internal.ws.transport.http.client.HttpTransportPipe.dump", Boolean.toString(true));
+        System.setProperty("com.sun.xml.ws.transport.http.HttpAdapter.dump", Boolean.toString(true));
+        System.setProperty("com.sun.xml.internal.ws.transport.http.HttpAdapter.dump", Boolean.toString(true));
 
         JaxWsConfig config = new JaxWsConfig();
         System.out.println(config.getHelloPort().helloWorld(args[0]));
@@ -104,7 +108,7 @@ public class Client {
                         int personId = Integer.parseInt(inputArray[2]);
                         boolean shield;
                         Person person = currentClass.getPersonById(personId);
-                        if (person.getPersonStatus() == "Student") {
+                        if (person.getIsTeacher() == false) {
                             shield = false;
                         }
                         else {
@@ -229,18 +233,23 @@ public class Client {
                         tile8people, tile9people, tile10lysol, tile10people, tile11lysol, tile11people, tile12people);
 
                 int[] people = currentClass.getOccupantIds();
-                for(int i = 0; i < people.length; i++) {
-                    int personId = people[i];
-                    Person person = currentClass.getPersonById(personId);
-                    String personType = person.getPersonStatus();
-                    char mask = person.getIsMaskWearing();
-                    char shield = 'a';
-                    if (personType == "Teacher") {
-                        Instructor instructor = (Instructor) currentClass.getPersonById(personId);
-                        shield = instructor.getIsShieldWearing();
-                    }
+                if (people != null) {
+                    for(int i = 0; i < people.length; i++) {
+                        int personId = people[i];
+                        Person person = currentClass.getPersonById(personId);
+                        String personType = "Student";
+                        Tile personTile = person.getTile();
+                        int tileId = personTile.getId();
+                        char mask = person.getIsMaskWearing();
+                        char shield = 'a';
+                        if (person instanceof Instructor) {
+                            Instructor instructor = (Instructor) currentClass.getPersonById(personId);
+                            shield = instructor.getIsShieldWearing();
+                            personType = "Teacher";
+                        }
 
-                    Output.printPerson(personId, personType, mask, shield);
+                        Output.printPerson(personId, personType, tileId, mask, shield);
+                    }
                 }
             }
         }

@@ -75,14 +75,14 @@ public class Person {
 
     /**
      * Gets the type of this person (Teacher or Student)
-     * @return "Teacher" if the person is a teacher or "Student" if the person is a student
+     * @return false if the person is a student or true if the person is a teacher
      */
-    public String getPersonStatus() {
+    public boolean getIsTeacher() {
         if (isTeacher == false) {
-            return "Student";
+            return false;
         }
         else {
-            return "Teacher";
+            return true;
         }
     }
 
