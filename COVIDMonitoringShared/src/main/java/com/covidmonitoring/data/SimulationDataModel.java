@@ -1,5 +1,7 @@
 package com.covidmonitoring.data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.ArrayList;
 
 /**
@@ -8,6 +10,7 @@ import java.util.ArrayList;
  *
  * @author Nathan Solomon
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class SimulationDataModel {
     private ArrayList<Classroom> classes;
 

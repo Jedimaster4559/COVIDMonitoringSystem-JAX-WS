@@ -1,5 +1,9 @@
 package com.covidmonitoring.data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -10,10 +14,24 @@ import java.util.ArrayList;
  * @author Nathan Solomon
  * @version 16 October 2020
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Classroom {
+    @XmlElements({
+            @XmlElement(name = "tile", type = Tile.class),
+            @XmlElement(name = "cleaner", type = Cleaner.class)
+    })
     private ArrayList<Tile> tiles;
+
+    @XmlElements({
+            @XmlElement(name = "person", type = Person.class),
+            @XmlElement(name = "instructor", type = Instructor.class)
+    })
     private ArrayList<Person> occupants;
     private int id;
+
+    public Classroom(){
+
+    }
 
     /**
      * Constructor
@@ -122,5 +140,15 @@ public class Classroom {
 
         return peopleInTile;
 
+    }
+
+    public String getAllPeople(){
+        String output = "";
+
+        for(Person p : occupants){
+            output += p.getId() + "\n";
+        }
+        output += "Total Students: " + occupants.size();
+        return output;
     }
 }

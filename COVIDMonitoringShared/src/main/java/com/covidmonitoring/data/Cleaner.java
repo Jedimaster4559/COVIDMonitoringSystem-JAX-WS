@@ -1,15 +1,23 @@
 package com.covidmonitoring.data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 /**
  * A tile that has a property of being able to be cleaned.
  *
  * @author Nathan Solomon
  * @version 16 October 2020
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Cleaner extends Tile {
     private int cleanCount;
     private boolean noSanitizerUsedAlarm;
     private boolean noLysolUsedAlarm;
+
+    public Cleaner(){
+        super();
+    }
 
     /**
      * Overload of normal cleaner.

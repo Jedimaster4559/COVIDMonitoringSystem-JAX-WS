@@ -22,6 +22,7 @@ public class AddPerson implements IAddPerson {
      */
     @Override
     public SimulationDataModel addPerson(int classroomId, int personId, boolean isTeacher){
+        System.out.println("Adding Person: " + classroomId + " " + personId);
         SimulationDataModel model = SimulationDataModelFactory.getModel();
         model.addPerson(classroomId, personId, isTeacher);
         return model;

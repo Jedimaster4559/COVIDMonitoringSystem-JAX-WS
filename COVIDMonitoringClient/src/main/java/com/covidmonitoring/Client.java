@@ -6,12 +6,15 @@
 package com.covidmonitoring;
 
 import com.covidmonitoring.data.*;
+import com.covidmonitoring.ws.Debug;
 
 import java.net.MalformedURLException;
 import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws MalformedURLException {
+//        Debug.enableAll(true);
+
         JaxWsConfig config = new JaxWsConfig();
         System.out.println(config.getHelloPort().helloWorld(args[0]));
         SimulationDataModel model = config.getRequestUpdatePort().requestUpdate();

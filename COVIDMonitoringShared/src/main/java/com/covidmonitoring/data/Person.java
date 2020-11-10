@@ -1,16 +1,24 @@
 package com.covidmonitoring.data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 /**
  * Describes a person and if they are properly wearing a face mask.
  *
  * @author Nathan Solomon
  * @version 16 October 2020
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Person {
     private Tile location;
     private int id;
     private boolean isTeacher;
     private boolean maskErrorAlarm;
+
+    public Person(){
+
+    }
 
     /**
      * Creates a new Person.

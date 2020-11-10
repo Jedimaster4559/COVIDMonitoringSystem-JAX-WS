@@ -1,16 +1,24 @@
 package com.covidmonitoring.data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 /**
  * A physical location inside the classroom.
  *
  * @author Nathan Solomon
  * @version 16 October 2020
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Tile {
     protected int numPeople;
     private int id;
     public boolean tooManyPeopleAlarm;
     protected LocationType type;
+
+    public Tile(){
+
+    }
 
     /**
      * Creates a new rectangle with no one in it.

@@ -22,6 +22,7 @@ public class UpdatePerson implements IUpdatePerson {
      */
     @Override
     public SimulationDataModel updatePerson(int personId, boolean mask, boolean faceshield) {
+        System.out.println("Update Person: " + personId + " " + mask + " " + faceshield);
         SimulationDataModel model = SimulationDataModelFactory.getModel();
         model.updatePerson(personId, mask, faceshield);
         return model;

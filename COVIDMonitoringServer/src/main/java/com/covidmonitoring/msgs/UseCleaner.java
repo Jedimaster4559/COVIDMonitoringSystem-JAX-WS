@@ -21,6 +21,7 @@ public class UseCleaner implements IUseCleaner {
      */
     @Override
     public SimulationDataModel useCleaner(int personId) {
+        System.out.println("Adding Person: " + personId);
         SimulationDataModel model = SimulationDataModelFactory.getModel();
         model.useCleaner(personId);
         return model;

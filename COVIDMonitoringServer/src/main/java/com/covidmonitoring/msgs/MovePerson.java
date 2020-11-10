@@ -23,6 +23,7 @@ public class MovePerson implements IMovePerson {
      */
     @Override
     public SimulationDataModel movePerson(int personId, int destinationId, boolean wipe){
+        System.out.println("Adding Person: " + personId + " " + destinationId + " " + wipe);
         SimulationDataModel model = SimulationDataModelFactory.getModel();
         model.movePerson(personId, destinationId, wipe);
         return model;

@@ -20,6 +20,7 @@ public class RequestUpdate implements IRequestUpdate {
      */
     @Override
     public SimulationDataModel requestUpdate() {
+        System.out.println("updating data model");
         return SimulationDataModelFactory.getModel();
     }
 }

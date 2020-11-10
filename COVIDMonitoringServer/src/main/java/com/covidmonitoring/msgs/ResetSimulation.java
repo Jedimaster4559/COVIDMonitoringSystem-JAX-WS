@@ -21,6 +21,7 @@ public class ResetSimulation implements IResetSimulation {
      */
     @Override
     public SimulationDataModel resetSimulation() {
+        System.out.println("Resetting Simulation");
         return SimulationDataModelFactory.reset();
     }
 }

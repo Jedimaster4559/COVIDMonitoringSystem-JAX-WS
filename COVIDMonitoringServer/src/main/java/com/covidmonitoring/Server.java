@@ -3,6 +3,7 @@ package com.covidmonitoring;
 import javax.xml.ws.Endpoint;
 
 import com.covidmonitoring.msgs.*;
+import com.covidmonitoring.ws.Debug;
 import com.covidmonitoring.ws.EndpointProperties;
 
 /**
@@ -14,6 +15,7 @@ import com.covidmonitoring.ws.EndpointProperties;
 public class Server {
 
     public static void main(String[] args) {
+//        Debug.enableAll(true);
         publishEndpoints();
     }
 

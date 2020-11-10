@@ -1,5 +1,8 @@
 package com.covidmonitoring.data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 /**
  * An instructor person. The instructor is the same as a person
  * except for the requirement of also wearing a Face Shield.
@@ -7,8 +10,13 @@ package com.covidmonitoring.data;
  * @author Nathan Solomon
  * @version 16 October 2020
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Instructor extends Person {
     private boolean shieldErrorAlarm;
+
+    public Instructor(){
+        super();
+    }
 
     /**
      * Overloads main constructor and defaults alarms to off.
