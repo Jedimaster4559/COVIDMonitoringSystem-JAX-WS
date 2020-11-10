@@ -109,7 +109,7 @@ public class Output {
      * @param shield 'y' if the teacher is wearing a face shield; 'n' if the teacher isn't; 'a' if the person is a student
      */
     static void printPerson(int personId, String personType, int tileID, char mask, char shield) {
-        System.out.println("------------------------------People------------------------------");
+        System.out.println("------------------------------Person------------------------------");
         System.out.println("Person ID: " + personId);
         System.out.println("Type: " + personType);
         System.out.println("Tile ID: " + tileID);
@@ -117,6 +117,5 @@ public class Output {
         if (shield == 'y' || shield == 'n') {
             System.out.println("Wearing a face shield: " + shield);
         }
-        System.out.println("------------------------------");
     }
 }

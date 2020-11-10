@@ -13,11 +13,7 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws MalformedURLException {
-        Debug.enableAll(true);
-        System.setProperty("com.sun.xml.ws.transport.http.client.HttpTransportPipe.dump", Boolean.toString(true));
-        System.setProperty("com.sun.xml.internal.ws.transport.http.client.HttpTransportPipe.dump", Boolean.toString(true));
-        System.setProperty("com.sun.xml.ws.transport.http.HttpAdapter.dump", Boolean.toString(true));
-        System.setProperty("com.sun.xml.internal.ws.transport.http.HttpAdapter.dump", Boolean.toString(true));
+        //Debug.enableAll(true);
 
         JaxWsConfig config = new JaxWsConfig();
         System.out.println(config.getHelloPort().helloWorld(args[0]));

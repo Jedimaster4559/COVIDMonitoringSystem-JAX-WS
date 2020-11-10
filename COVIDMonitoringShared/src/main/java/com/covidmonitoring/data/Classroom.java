@@ -138,6 +138,7 @@ public class Classroom {
             peopleInTile = new int[occupants.size()];
             for(Person person : occupants) {
                 peopleInTile[count] = (person.getId());
+                count++;
             }
         }
 
