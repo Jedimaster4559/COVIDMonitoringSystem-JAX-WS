@@ -49,7 +49,7 @@ public class Output {
         System.out.println("Update mask usage: mask ['on' || 'off'] [person ID]");
         System.out.println("Update face shield usage: shield ['on' || 'off'] [person ID]");
         System.out.println("------------------------------Commands------------------------------\n");
-        System.out.print("Please enter a command (all lowercase): ");
+        System.out.print("Please enter a command: ");
     }
 
     /**
