@@ -43,7 +43,8 @@ public class Output {
         System.out.println("Quit Simulation: quit");
         System.out.println("Switch room: switch [classroom number]");
         System.out.println("Add a person: add [person ID] ['teacher' || 'student']");
-        System.out.println("Move a person: move [person ID] [tile ID] ['y' to wipe || 'n' to not wipe || 'n' if N/A]");
+        System.out.println("Move a person: move [person ID] [tile ID] ['y' to wipe when leaving " +
+                            "|| 'n' to not wipe when leaving || 'n' if N/A]");
         System.out.println("Use lysol: lysol [person ID]");
         System.out.println("Use sanitizer: sanitizer [person ID]");
         System.out.println("Update mask usage: mask ['on' || 'off'] [person ID]");
@@ -106,7 +107,63 @@ public class Output {
                                      boolean tile6Lysol, int tile6People, int tile7People, boolean tile8Lysol,
                                      int tile8People, int tile9People, boolean tile10Lysol, int tile10People,
                                      boolean tile11Lysol, int tile11People, int tile12People) {
-
+        if (tile1Sanitizer == true) {
+            System.out.println("ERROR: SOMEONE LEFT TILE 1 WITHOUT USING SANITIZER.");
+        }
+        if (tile1People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 1.");
+        }
+        if (tile2People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 2.");
+        }
+        if (tile3Lysol == true) {
+            System.out.println("ERROR: SOMEONE LEFT TILE 3 WITHOUT USING LYSOL TWICE.");
+        }
+        if (tile3People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 3.");
+        }
+        if (tile4People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 4.");
+        }
+        if (tile5Lysol == true) {
+            System.out.println("ERROR: SOMEONE LEFT TILE 5 WITHOUT USING LYSOL TWICE.");
+        }
+        if (tile5People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 5.");
+        }
+        if (tile6Lysol == true) {
+            System.out.println("ERROR: SOMEONE LEFT TILE 6 WITHOUT USING LYSOL TWICE.");
+        }
+        if (tile6People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 6.");
+        }
+        if (tile7People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 7.");
+        }
+        if (tile8Lysol == true) {
+            System.out.println("ERROR: SOMEONE LEFT TILE 8 WITHOUT USING LYSOL TWICE.");
+        }
+        if (tile8People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 8.");
+        }
+        if (tile9People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 9.");
+        }
+        if (tile10Lysol == true) {
+            System.out.println("ERROR: SOMEONE LEFT TILE 10 WITHOUT USING LYSOL TWICE.");
+        }
+        if (tile10People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 10.");
+        }
+        if (tile11Lysol == true) {
+            System.out.println("ERROR: SOMEONE LEFT TILE 11 WITHOUT USING LYSOL TWICE.");
+        }
+        if (tile11People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 11.");
+        }
+        if (tile12People > 1) {
+            System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 12.");
+        }
     }
 
     /**
