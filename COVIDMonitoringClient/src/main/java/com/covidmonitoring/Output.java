@@ -88,10 +88,10 @@ public class Output {
         System.out.println("|Student Rectangle #1: Desk & Lysol |          |Student Rectangle #2: Desk & Lysol |          |Student Rectangle #3: Desk & Lysol |");
         System.out.println("|Tile ID: 5                         |Aisle     |TileID: 6                          |          |TileID: 8                          |");
         System.out.println("|# Times Lysol Used:" + tile5lysol + "               |TileID: 2 |# Times Lysol Used:" + tile6lysol + "               |          |# Times Lysol Used:" + tile8lysol + "               |");
-        System.out.println("|People:" + tile5people + "                           |People:" + tile2people + "  |People:" + tile6people + "                           |          |People:" + tile8people + "                           |");
-        System.out.println("|-----------------------------------|          |-----------------------------------|Aisle     |-----------------------------------|");
-        System.out.println("|Aisle                              |          |Student Rectangle #4: Desk & Lysol |TileID: 7 |Student Rectangle #5               |");
-        System.out.println("|TileID: 9                          |          |TileID: 10                         |People:" + tile7people + "  |TileID: 11                         |");
+        System.out.println("|People:" + tile5people + "                           |People:" + tile2people + "  |People:" + tile6people + "                           |Aisle     |People:" + tile8people + "                           |");
+        System.out.println("|-----------------------------------|          |-----------------------------------|TileID: 7 |-----------------------------------|");
+        System.out.println("|Aisle                              |          |Student Rectangle #4: Desk & Lysol |People:" + tile7people + "  |Student Rectangle #5               |");
+        System.out.println("|TileID: 9                          |          |TileID: 10                         |          |TileID: 11                         |");
         System.out.println("|People:" + tile9people + "                           |          |# Times Lysol Used:" + tile10lysol + "               |          |# Times Lysol Used:" + tile11lysol + "               |");
         System.out.println("|                                   |          |People:" + tile10people + "                           |          |People:" + tile11people + "                           |");
         System.out.println("|---------------------------------------------------------------------------------------------------------------------------------|");
@@ -99,6 +99,14 @@ public class Output {
         System.out.println("|TileID: 12                                                                                                                       |");
         System.out.println("|People:" + tile12people + "                                                                                                                         |");
         System.out.println("|---------------------------------------------------------------------------------------------------------------------------------|");
+    }
+
+    static void printClassroomErrors(boolean tile1Sanitizer, int tile1People, int tile2People, boolean tile3Lysol,
+                                     int tile3People, int tile4People, boolean tile5Lysol, int tile5People,
+                                     boolean tile6Lysol, int tile6People, int tile7People, boolean tile8Lysol,
+                                     int tile8People, int tile9People, boolean tile10Lysol, int tile10People,
+                                     boolean tile11Lysol, int tile11People, int tile12People) {
+
     }
 
     /**
@@ -113,8 +121,19 @@ public class Output {
         System.out.println("Person ID: " + personId);
         System.out.println("Type: " + personType);
         System.out.println("Tile ID: " + tileID);
+
+        if (mask == 'n' ) {
+            System.out.println("ERROR: PERSON " + personId + " IS NOT CORRECTLY WEARING THEIR MASK.");
+        }
+
         System.out.println("Wearing a mask: " + mask);
-        if (shield == 'y' || shield == 'n') {
+
+        if (shield == 'y') {
+            System.out.println("Wearing a face shield: " + shield);
+        }
+
+        else if (shield == 'n') {
+            System.out.println("ERROR: PERSON " + personId + " IS NOT CORRECTLY WEARING THEIR SHIELD.");
             System.out.println("Wearing a face shield: " + shield);
         }
     }

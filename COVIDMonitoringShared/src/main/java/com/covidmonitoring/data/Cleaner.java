@@ -84,4 +84,16 @@ public class Cleaner extends Tile {
     public int getCleanCount() {
         return cleanCount;
     }
+
+    /**
+     * Gets the Sanitizer Alarm
+     * @return the noSanitizerUsedAlarm
+     */
+    public boolean getSanitizerAlarm() { return noSanitizerUsedAlarm; }
+
+    /**
+     * Gets the Lysol Alarm
+     * @return the noLysolAlarm
+     */
+    public boolean getLysolAlarm() { return noLysolUsedAlarm; }
 }

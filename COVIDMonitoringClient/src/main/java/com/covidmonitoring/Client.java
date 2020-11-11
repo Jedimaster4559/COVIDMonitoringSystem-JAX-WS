@@ -228,6 +228,18 @@ public class Client {
                         tile4people, tile5lysol, tile5people, tile6lysol, tile6people, tile7people, tile8lysol,
                         tile8people, tile9people, tile10lysol, tile10people, tile11lysol, tile11people, tile12people);
 
+                boolean tile1SanitizerError = tile1.getSanitizerAlarm();
+                boolean tile3LysolError = tile3.getLysolAlarm();
+                boolean tile5LysolError = tile5.getLysolAlarm();
+                boolean tile6LysolError = tile6.getLysolAlarm();
+                boolean tile8LysolError = tile8.getLysolAlarm();
+                boolean tile10LysolError = tile10.getLysolAlarm();
+                boolean tile11LysolError = tile11.getLysolAlarm();
+
+                Output.printClassroomErrors(tile1SanitizerError, tile1people, tile2people, tile3LysolError, tile3people,
+                        tile4people, tile5LysolError, tile5people, tile6LysolError, tile6people, tile7people, tile8LysolError,
+                        tile8people, tile9people, tile10LysolError, tile10people, tile11LysolError, tile11people, tile12people);
+
                 int[] people = currentClass.getOccupantIds();
                 if (people != null) {
                     for(int i = 0; i < people.length; i++) {
