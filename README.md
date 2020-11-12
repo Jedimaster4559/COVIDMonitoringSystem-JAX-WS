@@ -2,11 +2,11 @@
 A COVID Monitoring System for classrooms built with JAX-WS.
 
 # Usage
-This application is entriely Command Line based. This section of this readme goes over basic command necessary to run the project.
+This application is entirely Command Line based. This section of this readme goes over basic command necessary to run the project.
 ( @Jada When you get to implementing this stuff, you might want to move this section fo the readme into it's own file. It's entirely up to you how to handle that, but we do need to document this part pretty extensively.)
 
 # Project Overview
-- COVIDMonitoringShared: Shared resources used accross the whole project. Right now, this is mostly the data model.
+- COVIDMonitoringShared: Shared resources used across the whole project. Right now, this is mostly the data model.
 - COVIDMonitoringServer: This is the server application that we are using to run this simulation.
 - COVIDMonitoringClient: The client application that interacts with the server simulation.
 
@@ -37,3 +37,9 @@ You can also run the different pieces of the application using the provided run 
 - run_server.bat
 
 Note: On MacOS and Linux, you may need to modify the permissions on the scripts to run. To do this, run `sudo chmod +x <filename>`
+
+To run both applications in one linux terminal, use `tmux`.
+
+# Submission Details
+The actual builds of each module are in that modules `target/` directory. For example, if you want to run the server application, you can
+find it's jar file in `COVIDMonitoringServer/target/`.

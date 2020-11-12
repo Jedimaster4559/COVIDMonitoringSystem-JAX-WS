@@ -236,10 +236,6 @@ public class Client {
                 boolean tile10LysolError = tile10.getLysolAlarm();
                 boolean tile11LysolError = tile11.getLysolAlarm();
 
-                Output.printClassroomErrors(tile1SanitizerError, tile1people, tile2people, tile3LysolError, tile3people,
-                        tile4people, tile5LysolError, tile5people, tile6LysolError, tile6people, tile7people, tile8LysolError,
-                        tile8people, tile9people, tile10LysolError, tile10people, tile11LysolError, tile11people, tile12people);
-
                 int[] people = currentClass.getOccupantIds();
                 if (people != null) {
                     for(int i = 0; i < people.length; i++) {
@@ -259,6 +255,13 @@ public class Client {
                         Output.printPerson(personId, personType, tileId, mask, shield);
                     }
                 }
+
+                Output.printClassroomErrors(tile1SanitizerError, tile1people, tile2people, tile3LysolError, tile3people,
+                        tile4people, tile5LysolError, tile5people, tile6LysolError, tile6people, tile7people, tile8LysolError,
+                        tile8people, tile9people, tile10LysolError, tile10people, tile11LysolError, tile11people, tile12people);
+
+                System.out.println("Press Enter to Continue...");
+                getInput.nextLine();
             }
         }
         System.out.println("See you next time!");

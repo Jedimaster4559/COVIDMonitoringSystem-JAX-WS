@@ -107,6 +107,8 @@ public class Output {
                                      boolean tile6Lysol, int tile6People, int tile7People, boolean tile8Lysol,
                                      int tile8People, int tile9People, boolean tile10Lysol, int tile10People,
                                      boolean tile11Lysol, int tile11People, int tile12People) {
+        System.out.print("\u001B[31m");
+
         if (tile1Sanitizer == true) {
             System.out.println("ERROR: SOMEONE LEFT TILE 1 WITHOUT USING SANITIZER.");
         }
@@ -164,6 +166,8 @@ public class Output {
         if (tile12People > 1) {
             System.out.println("ERROR: THERE ARE TOO MANY PEOPLE IN TILE 12.");
         }
+
+        System.out.println("\u001B[0m");
     }
 
     /**
